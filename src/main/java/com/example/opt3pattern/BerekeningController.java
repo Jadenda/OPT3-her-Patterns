@@ -14,17 +14,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class BerekeningController{
-//    private Opbrengsten1 op;
-//    private Kosten1 ko;
-//    private Belasting1 be;
-//
-//    public BerekeningController(Opbrengsten1 op, Kosten1 ko, Belasting1 be){
-//        this.op = op;
-//        this.ko = ko;
-//        this.be = be;
-//    }
-//th
+    private Double opbrengsten;
 
+    private Double kosten;
+
+    private Double belasting;
     @FXML
     private AnchorPane rootPane;
 
@@ -46,28 +40,31 @@ public class BerekeningController{
     @FXML
     private Button Loguit2;
 
+    public void waardes(){
+         this.opbrengsten = Opbrengsten1.getOpbrengstenList().get(0).getOpbrengsten();
+         this.kosten = Kosten1.getKostenList().get(0).getKosten();
+         this.belasting = Belasting1.getBelastingList().get(0).getBelasting();
+    }
+
     public void onBrutowinstClick(MouseEvent mouseEvent) throws IOException {
-        Double opbrengsten = Opbrengsten1.getOpbrengstenList().get(0).getOpbrengsten();
-        //Double kosten
+        waardes();
+        Double antwoord = opbrengsten - kosten;
         Text.setText("U belasting bedraagt:");
-        Antwoord.setText(String.valueOf(opbrengsten));
+        Antwoord.setText("€" + String.valueOf(antwoord));
 
-
-//        Double belasting = Belasting / 100;
-//        Double berekening = Opbrengsten * belasting;
-//        System.out.print("De belasting bedraagt: €" + berekening);
+//        Double brutowinst = Opbrengsten - Kosten;
+//        System.out.print("De brutowinst bedraagt: €" + brutowinst);
     }
 
 
     public void onNettowinstClick(MouseEvent mouseEvent) throws IOException {
+        waardes();
+        Double Belasting = belasting / 100;
+        Double berekening = opbrengsten - (opbrengsten * Belasting);
+        Double berekening2 = kosten - (kosten * Belasting);
+        Double nettowinst = berekening - berekening2;
         Text.setText("U nettowinst bedraagt:");
-
-//        public void KMinvullen() throws IOException {
-//            int a = Integer.parseInt(aantalKM.getText());
-//            int antwoord = a * 120;
-//            String b = String.valueOf(antwoord);
-//            CO2.setText(b);
-//        }
+        Antwoord.setText("€" + String.valueOf(nettowinst));
 
 //        Double belasting = Belasting / 100;
 //        Double berekening = Opbrengsten - (Opbrengsten * belasting);
@@ -78,10 +75,15 @@ public class BerekeningController{
 
 
     public void onBTWClick(MouseEvent mouseEvent) throws IOException {
+        waardes();
+        Double Belasting = belasting / 100;
+        Double berekening = opbrengsten * Belasting;
         Text.setText("U belasting bedraagt:");
+        Antwoord.setText("€" + String.valueOf(berekening));
 
-//        Double brutowinst = Opbrengsten - Kosten;
-//        System.out.print("De brutowinst bedraagt: €" + brutowinst);
+//        Double belasting = Belasting / 100;
+//        Double berekening = Opbrengsten * belasting;
+//        System.out.print("De belasting bedraagt: €" + berekening);
     }
 
 
