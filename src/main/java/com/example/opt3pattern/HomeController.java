@@ -40,34 +40,34 @@ public class HomeController {
     @FXML
     private Button Loguit;
 
-    public void addToOpbrengsten1(){
+    public void addToOpbrengstenList(){
         double o = Double.parseDouble(Opbrengsten.getText());
-            if(Opbrengsten1.getOpbrengstenList().equals(empty)){
-                Opbrengsten1.getOpbrengstenList().add(new Opbrengsten1(o));
-            }
-//        op = new Opbrengsten1(o);
+        if(Opbrengsten1.getOpbrengstenList().equals(empty)) {
+            Opbrengsten1.getOpbrengstenList().add(new Opbrengsten1(o));
+
+        }
     }
 
-    public void addToKosten1(){
+    public void addToKostenList(){
         double k = Double.parseDouble(Kosten.getText());
-        if(Kosten1.getKostenList().equals(empty)){
+        if(Kosten1.getKostenList().equals(empty)) {
             Kosten1.getKostenList().add(new Kosten1(k));
+
         }
-//        ko = new Kosten1(k);
     }
 
-    public void addToBelasting1(){
+    public void addToBelastingList(){
         double b = Double.parseDouble(BTW.getText());
-        if(Kosten1.getKostenList().equals(empty)){
+        if(Belasting1.getBelastingList().equals(empty)) {
             Belasting1.getBelastingList().add(new Belasting1(b));
+
         }
-//        be = new Belasting1(b);
     }
 
     public void onVolgendeClick(MouseEvent mouseEvent) throws IOException {
-        addToOpbrengsten1();
-        addToKosten1();
-        addToBelasting1();
+        addToOpbrengstenList();
+        addToKostenList();
+        addToBelastingList();
         AnchorPane pane = FXMLLoader.load(getClass().getResource("Berekening.fxml"));
         rootPane.getChildren().setAll(pane);
 

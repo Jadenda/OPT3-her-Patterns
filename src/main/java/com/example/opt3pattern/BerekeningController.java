@@ -47,8 +47,11 @@ public class BerekeningController{
     private Button Loguit2;
 
     public void onBrutowinstClick(MouseEvent mouseEvent) throws IOException {
-        Antwoord.setText(String.valueOf(Opbrengsten1.getOpbrengstenList().get(0).getOpbrengsten()));
+        Double opbrengsten = Opbrengsten1.getOpbrengstenList().get(0).getOpbrengsten();
+        //Double kosten
         Text.setText("U belasting bedraagt:");
+        Antwoord.setText(String.valueOf(opbrengsten));
+
 
 //        Double belasting = Belasting / 100;
 //        Double berekening = Opbrengsten * belasting;
@@ -57,7 +60,7 @@ public class BerekeningController{
 
 
     public void onNettowinstClick(MouseEvent mouseEvent) throws IOException {
-
+        Text.setText("U nettowinst bedraagt:");
 
 //        public void KMinvullen() throws IOException {
 //            int a = Integer.parseInt(aantalKM.getText());
@@ -75,7 +78,7 @@ public class BerekeningController{
 
 
     public void onBTWClick(MouseEvent mouseEvent) throws IOException {
-
+        Text.setText("U belasting bedraagt:");
 
 //        Double brutowinst = Opbrengsten - Kosten;
 //        System.out.print("De brutowinst bedraagt: €" + brutowinst);
