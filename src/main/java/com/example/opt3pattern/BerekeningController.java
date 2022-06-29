@@ -5,15 +5,18 @@ import com.example.opt3pattern.Model.Kosten1;
 import com.example.opt3pattern.Model.Opbrengsten1;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class BerekeningController{
+public class BerekeningController implements Initializable {
     private Double opbrengsten;
 
     private Double kosten;
@@ -36,6 +39,12 @@ public class BerekeningController{
 
     @FXML
     private Label Antwoord;
+
+    @FXML
+    private Label CollegaNummer;
+
+    @FXML
+    private Label Colleganaam;
 
     @FXML
     private Button Loguit2;
@@ -93,5 +102,13 @@ public class BerekeningController{
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        NaamPrinten p = new PrintBerekening();
+        p.naam();
+        Colleganaam.setText(p.getNaam());
+        p.collegaNummer();
+        CollegaNummer.setText("Collega: " + String.valueOf(p.getCollegaNummer()));
 
+    }
 }

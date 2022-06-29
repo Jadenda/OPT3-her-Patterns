@@ -5,16 +5,22 @@ import com.example.opt3pattern.Model.Kosten1;
 import com.example.opt3pattern.Model.Opbrengsten1;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class HomeController {
+public class HomeController implements Initializable {
+
+
 //
 //    private Opbrengsten1 op;
 //
@@ -33,6 +39,14 @@ public class HomeController {
 
     @FXML
     private TextField BTW;
+
+    @FXML
+    private Label Antwoord;
+
+    @FXML
+    private Label CollegaNummer;
+    @FXML
+    private Label Colleganaam;
 
     @FXML
     private Button Volgende;
@@ -86,4 +100,12 @@ public class HomeController {
         rootPane.getChildren().setAll(pane);
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        NaamPrinten p = new PrintHome();
+        p.naam();
+        Colleganaam.setText(p.getNaam());
+        p.collegaNummer();
+        CollegaNummer.setText("Collega: " + String.valueOf(p.getCollegaNummer()));
+    }
 }

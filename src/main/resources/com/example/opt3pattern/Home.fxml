@@ -33,11 +33,13 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="Volgende" layoutX="228.0" layoutY="309.0" mnemonicParsing="false" onMouseClicked="#onVolgendeClick" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: #3f8ff2#3f8ff2 #3f8ff2#3f8ff2;" text="Volgende " textFill="WHITE">
+      <Button fx:id="Volgende" layoutX="228.0" layoutY="298.0" mnemonicParsing="false" onMouseClicked="#onVolgendeClick" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: #3f8ff2#3f8ff2 #3f8ff2#3f8ff2;" text="Volgende " textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
       <TextField fx:id="BTW" layoutX="162.0" layoutY="254.0" prefHeight="26.0" prefWidth="232.0" />
+      <Label fx:id="Colleganaam" alignment="CENTER" layoutX="185.0" layoutY="362.0" prefHeight="17.0" prefWidth="186.0" />
+      <Label fx:id="CollegaNummer" alignment="CENTER" layoutX="185.0" layoutY="337.0" prefHeight="17.0" prefWidth="186.0" />
    </children>
 </AnchorPane>
