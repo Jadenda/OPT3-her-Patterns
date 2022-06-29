@@ -12,7 +12,7 @@
             <Font name="Arial Black" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="Loguit2" layoutX="516.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#onLoguit2Click" prefHeight="32.0" prefWidth="70.0" text="Loguit" textFill="#e10909">
+      <Button fx:id="Loguit2" layoutX="516.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#melding" prefHeight="32.0" prefWidth="70.0" text="Loguit" textFill="#e10909">
          <font>
             <Font name="Arial" size="14.0" />
          </font></Button>

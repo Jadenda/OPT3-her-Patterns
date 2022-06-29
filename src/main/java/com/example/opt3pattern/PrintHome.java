@@ -1,14 +1,14 @@
 package com.example.opt3pattern;
 
-public class PrintHome extends NaamPrinten{
+public class PrintHome extends NaamPrinten implements getnaam, getcollegaNummer{
     @Override
-    void collegaNummer() {
+    public void collegaNummer() {
         setCollegaNummer(1);
         System.out.println(getCollegaNummer());
     }
 
     @Override
-    void naam() {
+    public void naam() {
         setNaam("Marcel van der Ploeg");
     }
 }

@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="rootPane" prefHeight="400.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.opt3pattern.HomeController">
    <children>
-      <Button fx:id="Loguit" layoutX="503.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#onLoguitClick" prefHeight="32.0" prefWidth="70.0" text="Loguit" textFill="#e10909">
+      <Button fx:id="Loguit" layoutX="503.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#melding" prefHeight="32.0" prefWidth="70.0" text="Loguit" textFill="#e10909">
          <font>
             <Font name="Arial" size="14.0" />
          </font></Button>

@@ -3,17 +3,21 @@ package com.example.opt3pattern;
 import com.example.opt3pattern.Model.Belasting1;
 import com.example.opt3pattern.Model.Kosten1;
 import com.example.opt3pattern.Model.Opbrengsten1;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class BerekeningController implements Initializable {
@@ -96,7 +100,7 @@ public class BerekeningController implements Initializable {
     }
 
 
-    public void onLoguit2Click(MouseEvent mouseEvent) throws IOException {
+    public void onLoguit2Click() throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("Login.fxml"));
         rootPane.getChildren().setAll(pane);
     }
@@ -109,6 +113,40 @@ public class BerekeningController implements Initializable {
         Colleganaam.setText(p.getNaam());
         p.collegaNummer();
         CollegaNummer.setText("Collega: " + String.valueOf(p.getCollegaNummer()));
+    }
+    public void melding(){
+        AnchorPane popup = new AnchorPane();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(popup, 350, 120));
+        stage.setResizable(false);
 
+        Label melding = new Label("Weet u zeker dat u wilt uitloggen?");
+        melding.setStyle("-fx-font-size: 14");
+        melding.setLayoutX(70);
+        melding.setLayoutY(20);
+
+        Button Uitloggen = new Button("Uitloggen");
+        Uitloggen.setCursor(Cursor.HAND);
+        Uitloggen.setLayoutX(110);
+        Uitloggen.setLayoutY(70);
+
+        Button Annuleer = new Button("Annuleer");
+        Annuleer.setCursor(Cursor.HAND);
+        Annuleer.setLayoutX(190);
+        Annuleer.setLayoutY(70);
+
+        popup.getChildren().addAll(melding, Uitloggen, Annuleer);
+
+        EventHandler<ActionEvent> uitloggen = actionEvent -> {
+            try {
+                onLoguit2Click();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            stage.close();
+        };
+        Uitloggen.addEventHandler(ActionEvent.ACTION, uitloggen);
+        Annuleer.setOnAction(args -> stage.close());
+        stage.show();
     }
 }

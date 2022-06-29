@@ -1,11 +1,11 @@
 package com.example.opt3pattern;
 
-public abstract class NaamPrinten {
+public abstract class NaamPrinten implements getcollegaNummer, getnaam {
     private int CollegaNummer;
     private String Naam;
 
-    abstract void collegaNummer();
-    abstract void naam();
+     public abstract void collegaNummer();
+     public abstract void naam();
 
 
     public void NaamPrinten(){
