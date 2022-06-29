@@ -49,8 +49,8 @@ public class BerekeningController{
     public void onBrutowinstClick(MouseEvent mouseEvent) throws IOException {
         waardes();
         Double antwoord = opbrengsten - kosten;
-        Text.setText("U belasting bedraagt:");
-        Antwoord.setText("€" + String.valueOf(antwoord));
+        Text.setText("U brutowinst bedraagt:");
+        Antwoord.setText("€" + String.format("%.2f", antwoord));
 
 //        Double brutowinst = Opbrengsten - Kosten;
 //        System.out.print("De brutowinst bedraagt: €" + brutowinst);
@@ -64,7 +64,7 @@ public class BerekeningController{
         Double berekening2 = kosten - (kosten * Belasting);
         Double nettowinst = berekening - berekening2;
         Text.setText("U nettowinst bedraagt:");
-        Antwoord.setText("€" + String.valueOf(nettowinst));
+        Antwoord.setText("€" + String.format("%.2f", nettowinst));
 
 //        Double belasting = Belasting / 100;
 //        Double berekening = Opbrengsten - (Opbrengsten * belasting);
@@ -79,7 +79,7 @@ public class BerekeningController{
         Double Belasting = belasting / 100;
         Double berekening = opbrengsten * Belasting;
         Text.setText("U belasting bedraagt:");
-        Antwoord.setText("€" + String.valueOf(berekening));
+        Antwoord.setText("€" + String.format("%.2f", berekening));
 
 //        Double belasting = Belasting / 100;
 //        Double berekening = Opbrengsten * belasting;
