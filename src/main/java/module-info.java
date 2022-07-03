@@ -10,6 +10,7 @@ module com.example.opt3pattern {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires org.testng;
 
     opens com.example.opt3pattern to javafx.fxml;
     exports com.example.opt3pattern;
